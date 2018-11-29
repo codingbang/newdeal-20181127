@@ -64,7 +64,7 @@ public class App {
     // 배열에 입력한 개수만큼 출력한다.
     for (int j = 0; j < i; j++) {
       System.out.printf("%3d, %-15s, %10s ~ %10s, %4d\n", 
-          lessons[i].no, lessons[j].title, lessons[j].startDate, lessons[j].endDate, lessons[j].totalHours);
+          lessons[j].no, lessons[j].title, lessons[j].startDate, lessons[j].endDate, lessons[j].totalHours);
     }
   }
 }
