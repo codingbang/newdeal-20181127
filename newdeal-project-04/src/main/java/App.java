@@ -10,13 +10,6 @@ public class App {
     final int LENGTH = 10;
     
     Lesson[] lessons = new Lesson[LENGTH];
-    int[] no = new int[LENGTH];
-    String[] title = new String[LENGTH];
-    String[] contents = new String[LENGTH];
-    Date[] startDate = new Date[LENGTH];
-    Date[] endDate = new Date[LENGTH];
-    int[] totalHours = new int[LENGTH];
-    int[] dayHours = new int[LENGTH];
     
     int i = 0;
     while (i < LENGTH) {
