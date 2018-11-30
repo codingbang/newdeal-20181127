@@ -51,6 +51,11 @@
 - <https://github.com/eomcs/eomcs-java-project> 에서 v2.6, v2.7 과제 해결
 
 ## 32 : 인터페이스로 규칙 정의하기
-  ### 33 : Iterator 디자인 패턴의 활용
+  #### 33 : Iterator 디자인 패턴의 활용
 
 - <https://github.com/eomcs/eomcs-java-project> 에서 v3.2, v3.3 과제 해결
+
+## 34 : 자바 컬렉션 API 사용
+  #### 35 : Command 디자인 패턴을 적용하기
+  #### 36 : 예외가 발생했을 때 시스템을 멈추지 않게 하는 방법
+- <https://github.com/eomcs/eomcs-java-project> 에서 v3.4, v3.5, v3.6 과제 해결
