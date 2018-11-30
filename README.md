@@ -38,6 +38,19 @@
 
 - <https://github.com/eomcs/eomcs-java-project> 에서 v2.2 과제 해결
 
-## 24 : 인스턴스 연산자와 메서드
+## 24 : 생성자, setter/getter 사용
 
 - <https://github.com/eomcs/eomcs-java-project> 에서 v2.4 과제 해결
+
+## 25 : 데이터 처리 코드를 별도의 클래스로 분리
+
+- <https://github.com/eomcs/eomcs-java-project> 에서 v2.5 과제 해결
+
+## 26 : 다형성, 다형적 변수
+
+- <https://github.com/eomcs/eomcs-java-project> 에서 v2.6, v2.7 과제 해결
+
+## 32 : 인터페이스로 규칙 정의하기
+  ### 33 : Iterator 디자인 패턴의 활용
+
+- <https://github.com/eomcs/eomcs-java-project> 에서 v3.2, v3.3 과제 해결
