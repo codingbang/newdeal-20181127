@@ -1,48 +1,70 @@
 package com.eomcs.lms.handler;
 
-import java.sql.Date;
-import java.util.List;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 import java.util.Scanner;
-import com.eomcs.lms.domain.Lesson;
+import org.mariadb.jdbc.Driver;
 
 public class LessonAddCommand implements Command {
-  
+
   Scanner keyboard;
-  List<Lesson> list;
-  
-  public LessonAddCommand(Scanner keyboard, List<Lesson> list) {
+
+  public LessonAddCommand(Scanner keyboard) {
     this.keyboard = keyboard;
-    this.list = list;
   }
 
   @Override
   public void execute() {
-    Lesson lesson = new Lesson();
+    Connection con = null;
+    Statement stmt = null;
 
-    System.out.print("번호? ");
-    lesson.setNo(Integer.parseInt(keyboard.nextLine()));
+    try {
+      System.out.print("제목? ");
+      String title = keyboard.nextLine();
 
-    System.out.print("수업명? ");
-    lesson.setTitle(keyboard.nextLine());
+      System.out.print("내용? ");
+      String content = keyboard.nextLine();
 
-    System.out.print("설명? ");
-    lesson.setContents(keyboard.nextLine());
+      System.out.print("시작일? ");
+      String startDate = keyboard.nextLine();
 
-    System.out.print("시작일? ");
-    lesson.setStartDate(Date.valueOf(keyboard.nextLine()));
+      System.out.print("종료일? ");
+      String endDate = keyboard.nextLine();
 
-    System.out.print("종료일? ");
-    lesson.setEndDate(Date.valueOf(keyboard.nextLine()));
+      System.out.print("총강의시간? ");
+      String totalHour = keyboard.nextLine();
 
-    System.out.print("총수업시간? ");
-    lesson.setTotalHours(Integer.parseInt(keyboard.nextLine()));
+      System.out.print("일강의시간? ");
+      String dayHour = keyboard.nextLine();
 
-    System.out.print("일수업시간? ");
-    lesson.setDayHours(Integer.parseInt(keyboard.nextLine()));
+      System.out.print("매니저번호? ");
+      String mno = keyboard.nextLine();
 
-    list.add(lesson);
+      DriverManager.registerDriver(new Driver());
+      con = DriverManager.getConnection("jdbc:mariadb://localhost:3306/studydb", "study", "1111");
+      stmt = con.createStatement();
+      stmt.executeUpdate("insert into lesson(title, cont, sdt, edt, tot_hr, day_hr, mno)"
+          + " values('" + title + "'," + " '" + content + "' , '" + startDate + "', '" + endDate
+          + "', " + totalHour + ", " + dayHour + ",  " + mno + ")");
 
-    System.out.println("저장하였습니다.");
+
+      System.out.println("저장하였습니다.");
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      try {
+        stmt.close();
+      } catch (Exception e) {
+      }
+      try {
+        con.close();
+      } catch (Exception e) {
+      }
+    }
+
+
   }
 
 }

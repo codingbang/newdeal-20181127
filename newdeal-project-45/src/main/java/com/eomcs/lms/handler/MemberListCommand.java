@@ -1,27 +1,47 @@
 package com.eomcs.lms.handler;
 
-import java.util.List;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Scanner;
-import com.eomcs.lms.domain.Member;
+import org.mariadb.jdbc.Driver;
 
 public class MemberListCommand implements Command {
   
   Scanner keyboard;
-  List<Member> list;
   
-  public MemberListCommand(Scanner keyboard, List<Member> list) {
+  public MemberListCommand(Scanner keyboard) {
     this.keyboard = keyboard;
-    this.list = list;
   }
 
   @Override
   public void execute() {
-    Member[] members = list.toArray(new Member[] {});
-    for (Member member : members) {
-      System.out.printf("%3d, %-4s, %-20s, %-15s, %s\n", 
-          member.getNo(), member.getName(), 
-          member.getEmail(), member.getTel(), member.getRegisteredDate());
+    
+    Connection con = null;
+    Statement stmt = null;
+    ResultSet rs = null;
+    
+    try {
+      DriverManager.registerDriver(new Driver());
+       con = DriverManager.getConnection("jdbc:mariadb://localhost:3306/studydb", "study", "1111");
+       stmt = con.createStatement();
+       rs = stmt.executeQuery("select mno, name, email, tel, cdt from member");
+       
+       while (rs.next()) {
+         System.out.printf("%3d, %-4s, %-20s, %-15s, %s\n", 
+             rs.getInt("mno"), rs.getString("name"), 
+             rs.getString("email"), rs.getString("tel"), rs.getDate("cdt"));
+       }
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      try { rs.close(); } catch (Exception e) {}
+      try { stmt.close(); } catch (Exception e) {}
+      try { con.close(); } catch (Exception e) {}
     }
+    
+    
   }
 
 }

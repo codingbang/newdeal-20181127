@@ -1,13 +1,10 @@
 package com.eomcs.lms;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
-import com.eomcs.lms.domain.Lesson;
-import com.eomcs.lms.domain.Member;
 import com.eomcs.lms.handler.BoardAddCommand;
 import com.eomcs.lms.handler.BoardDeleteCommand;
 import com.eomcs.lms.handler.BoardDetailCommand;
@@ -33,10 +30,6 @@ public class App {
   static Queue<String> commandHistory2 = new LinkedList<>();
   
   public static void main(String[] args) {
-
-    ArrayList<Lesson> lessons = new  ArrayList<>();
-    ArrayList<Member> members = new  ArrayList<>();
-
     
     HashMap<String, Command> commandMap = new HashMap<>();
     commandMap.put("/board/list", new BoardListCommand(keyboard));
@@ -45,17 +38,17 @@ public class App {
     commandMap.put("/board/update", new BoardUpdateCommand(keyboard));
     commandMap.put("/board/delete", new BoardDeleteCommand(keyboard));
     commandMap.put("hello", new HelloCommand(keyboard));
-    commandMap.put("/lesson/list", new LessonListCommand(keyboard, lessons));
-    commandMap.put("/lesson/detail", new LessonDetailCommand(keyboard, lessons));
-    commandMap.put("/lesson/add", new LessonAddCommand(keyboard, lessons));
-    commandMap.put("/lesson/update", new LessonUpdateCommand(keyboard, lessons));
-    commandMap.put("/lesson/delete", new LessonDeleteCommand(keyboard, lessons));
+    commandMap.put("/lesson/list", new LessonListCommand(keyboard));
+    commandMap.put("/lesson/detail", new LessonDetailCommand(keyboard));
+    commandMap.put("/lesson/add", new LessonAddCommand(keyboard));
+    commandMap.put("/lesson/update", new LessonUpdateCommand(keyboard));
+    commandMap.put("/lesson/delete", new LessonDeleteCommand(keyboard));
     
-    commandMap.put("/member/list", new MemberListCommand(keyboard, members));
-    commandMap.put("/member/detail", new MemberDetailCommand(keyboard, members));
-    commandMap.put("/member/add", new MemberAddCommand(keyboard, members));
-    commandMap.put("/member/update", new MemberUpdateCommand(keyboard, members));
-    commandMap.put("/member/delete", new MemberDeleteCommand(keyboard, members));
+    commandMap.put("/member/list", new MemberListCommand(keyboard));
+    commandMap.put("/member/detail", new MemberDetailCommand(keyboard));
+    commandMap.put("/member/add", new MemberAddCommand(keyboard));
+    commandMap.put("/member/update", new MemberUpdateCommand(keyboard));
+    commandMap.put("/member/delete", new MemberDeleteCommand(keyboard));
     
     while (true) {
       String command = prompt();
