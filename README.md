@@ -59,3 +59,7 @@
   #### 35 : Command 디자인 패턴을 적용하기
   #### 36 : 예외가 발생했을 때 시스템을 멈추지 않게 하는 방법
 - <https://github.com/eomcs/eomcs-java-project> 에서 v3.4, v3.5, v3.6 과제 해결
+
+## 45 - 데이터 관리를 전문 프로그램인 DBMS에게 맡기기
+
+- <https://github.com/eomcs/eomcs-java-project> 에서 v4.5 과제 해결
