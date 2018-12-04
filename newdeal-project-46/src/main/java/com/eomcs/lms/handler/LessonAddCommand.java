@@ -39,8 +39,8 @@ public class LessonAddCommand implements Command {
       System.out.print("일강의시간? ");
       lesson.setDayHours(Integer.parseInt(keyboard.nextLine()));
 
-      System.out.print("매니저번호? ");
-      lesson.setManagerNo(Integer.parseInt(keyboard.nextLine()));
+      System.out.print("회원번호? ");
+      lesson.setMemberNo(Integer.parseInt(keyboard.nextLine()));
       
       lessonDao.insert(lesson);
       

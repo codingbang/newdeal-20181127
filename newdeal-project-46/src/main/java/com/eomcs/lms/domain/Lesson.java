@@ -9,8 +9,7 @@ public class Lesson implements Cloneable {
   private Date endDate;
   private int totalHours;
   private int dayHours;
-  private int boardNo;
-  private int managerNo;
+  private int memberNo;
   
   @Override
   public Lesson clone() throws CloneNotSupportedException {
@@ -59,18 +58,14 @@ public class Lesson implements Cloneable {
   public void setDayHours(int dayHours) {
     this.dayHours = dayHours;
   }
-  public int getBoardNo() {
-    return boardNo;
+  public int getMemberNo() {
+    return memberNo;
   }
-  public void setBoardNo(int boardNo) {
-    this.boardNo = boardNo;
+  public void setMemberNo(int memberNo) {
+    this.memberNo = memberNo;
   }
-  public int getManagerNo() {
-    return managerNo;
-  }
-  public void setManagerNo(int managerNo) {
-    this.managerNo = managerNo;
-  }
+  
+  
   
   
   

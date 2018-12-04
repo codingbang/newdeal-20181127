@@ -26,7 +26,6 @@ public class LessonUpdateCommand implements Command {
       
       System.out.print("제목? ");
       lesson.setTitle(keyboard.nextLine());
-      
 
       System.out.print("내용? ");
       lesson.setContents(keyboard.nextLine());
@@ -43,8 +42,8 @@ public class LessonUpdateCommand implements Command {
       System.out.print("일강의시간? ");
       lesson.setDayHours(Integer.parseInt(keyboard.nextLine()));
 
-      /*System.out.print("매니저번호? ");
-      String mno = keyboard.nextLine();*/
+      System.out.print("회원번호? ");
+      lesson.setMemberNo(Integer.parseInt(keyboard.nextLine()));
 
       lessonDao.update(lesson);
 
