@@ -13,6 +13,7 @@ import com.eomcs.lms.dao.BoardDao;
 import com.eomcs.lms.dao.LessonDao;
 import com.eomcs.lms.dao.MemberDao;
 import com.eomcs.lms.dao.impl.MariaDBBoardDao;
+import com.eomcs.lms.dao.impl.MariaDBLessonDao;
 import com.eomcs.lms.dao.impl.MariaDBMemberDao;
 import com.eomcs.lms.handler.BoardAddCommand;
 import com.eomcs.lms.handler.BoardDeleteCommand;
@@ -49,7 +50,7 @@ public class App {
     
     BoardDao boardDao = new MariaDBBoardDao(sqlSessionFactory);
     MemberDao memberDao = new MariaDBMemberDao(sqlSessionFactory);
-    LessonDao lessonDao = new LessonDao();
+    LessonDao lessonDao = new MariaDBLessonDao(sqlSessionFactory);
     
     HashMap<String, Command> commandMap = new HashMap<>();
     commandMap.put("/board/list", new BoardListCommand(keyboard, boardDao));
@@ -59,16 +60,16 @@ public class App {
     commandMap.put("/board/delete", new BoardDeleteCommand(keyboard, boardDao));
     
     commandMap.put("/lesson/list", new LessonListCommand(keyboard, lessonDao));
-    commandMap.put("/lesson/detail", new LessonDetailCommand(keyboard));
-    commandMap.put("/lesson/add", new LessonAddCommand(keyboard));
-    commandMap.put("/lesson/update", new LessonUpdateCommand(keyboard));
-    commandMap.put("/lesson/delete", new LessonDeleteCommand(keyboard));
+    commandMap.put("/lesson/detail", new LessonDetailCommand(keyboard, lessonDao));
+    commandMap.put("/lesson/add", new LessonAddCommand(keyboard, lessonDao));
+    commandMap.put("/lesson/update", new LessonUpdateCommand(keyboard, lessonDao));
+    commandMap.put("/lesson/delete", new LessonDeleteCommand(keyboard, lessonDao));
     
-    commandMap.put("/member/list", new MemberListCommand(keyboard));
-    commandMap.put("/member/detail", new MemberDetailCommand(keyboard));
-    commandMap.put("/member/add", new MemberAddCommand(keyboard));
-    commandMap.put("/member/update", new MemberUpdateCommand(keyboard));
-    commandMap.put("/member/delete", new MemberDeleteCommand(keyboard));
+    commandMap.put("/member/list", new MemberListCommand(keyboard, memberDao));
+    commandMap.put("/member/detail", new MemberDetailCommand(keyboard, memberDao));
+    commandMap.put("/member/add", new MemberAddCommand(keyboard, memberDao));
+    commandMap.put("/member/update", new MemberUpdateCommand(keyboard, memberDao));
+    commandMap.put("/member/delete", new MemberDeleteCommand(keyboard, memberDao));
     
     commandMap.put("hello", new HelloCommand(keyboard));
     commandMap.put("/auth/login", new LoginCommand(keyboard, memberDao));

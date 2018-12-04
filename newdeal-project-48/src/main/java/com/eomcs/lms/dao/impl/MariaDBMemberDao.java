@@ -139,7 +139,7 @@ public List<Member> findAll() throws Exception {
     try {
       DriverManager.registerDriver(new Driver());
       con = DriverManager.getConnection("jdbc:mariadb://localhost:3306/studydb", "study", "1111");
-      pstmt = con.prepareStatement("update lesson set name=?, email=?, photo=?, tel=? where mno=?");
+      pstmt = con.prepareStatement("update member set name=?, email=?, photo=?, tel=? where mno=?");
       pstmt.setString(1, member.getName());
       pstmt.setString(2, member.getEmail());
       pstmt.setString(3, member.getPhoto());
