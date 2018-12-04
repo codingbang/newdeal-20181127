@@ -58,5 +58,4 @@ public class Member implements Cloneable {
     this.registeredDate = registeredDate;
   }
   
-  
 }

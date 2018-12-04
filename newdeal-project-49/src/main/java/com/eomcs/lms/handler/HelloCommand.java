@@ -17,5 +17,4 @@ public class HelloCommand implements Command{
     
     System.out.println(name + "님 반갑습니다!");
   }
-
 }

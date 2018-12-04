@@ -15,7 +15,6 @@ public class BoardDetailCommand implements Command {
   }
   
   public void execute() {
-    
     try {
       System.out.print("번호? ");
       int no = Integer.parseInt(keyboard.nextLine());

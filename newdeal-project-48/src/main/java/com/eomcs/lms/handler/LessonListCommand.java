@@ -17,7 +17,6 @@ public class LessonListCommand implements Command {
 
   @Override
   public void execute() {
-    
     try {
       List<Lesson> list = lessonDao.findAll();
        for (Lesson lesson : list) {

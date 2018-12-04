@@ -14,7 +14,6 @@ public class HelloCommand implements Command{
   public void execute() {
     System.out.print("이름은? ");
     String name = keyboard.nextLine();
-    
     System.out.println(name + "님 반갑습니다!");
   }
 

@@ -16,7 +16,6 @@ public class BoardUpdateCommand implements Command {
   
   public void execute() {
     
-    
     try {
       
       System.out.print("게시글번호? ");
@@ -32,8 +31,6 @@ public class BoardUpdateCommand implements Command {
       } else {
         System.out.println("변경할 게시글이 없습니다.");
       }
-      
-     
       
      
     } catch (Exception e) {

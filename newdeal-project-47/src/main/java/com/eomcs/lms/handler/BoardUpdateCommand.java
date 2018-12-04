@@ -15,8 +15,6 @@ public class BoardUpdateCommand implements Command {
   }
   
   public void execute() {
-    
-    
     try {
       
       System.out.print("게시글번호? ");

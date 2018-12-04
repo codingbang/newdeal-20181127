@@ -15,7 +15,6 @@ public class LoginCommand implements Command {
   }
   
   public void execute() {
-    
     try {
       
       System.out.print("이메일? ");
@@ -23,7 +22,6 @@ public class LoginCommand implements Command {
       
       System.out.print("암호? ");
       String password = keyboard.nextLine();
-      
       
       Member member = memberDao.findByEmailPassword(email, password);
       

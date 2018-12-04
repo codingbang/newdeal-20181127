@@ -14,7 +14,6 @@ public class Member implements Cloneable {
   public Member clone() throws CloneNotSupportedException {
     return (Member) super.clone();
   }
-  
   public int getNo() {
     return no;
   }

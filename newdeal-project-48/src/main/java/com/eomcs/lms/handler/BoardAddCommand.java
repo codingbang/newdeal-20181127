@@ -15,7 +15,6 @@ public class BoardAddCommand implements Command {
   }
   
   public void execute() {
-    
     try {
       Board board = new Board();
       System.out.print("내용? ");
