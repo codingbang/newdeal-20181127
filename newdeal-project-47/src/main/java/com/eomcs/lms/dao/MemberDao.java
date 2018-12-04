@@ -5,13 +5,13 @@ import com.eomcs.lms.domain.Member;
 
 public interface MemberDao {
   
-  public List<Member> findAll() throws Exception;
+  List<Member> findAll() throws Exception;
   
-  public Member findByNo(int no) throws Exception;
+  Member findByNo(int no) throws Exception;
   
-  public void insert(Member member) throws Exception;
+  void insert(Member member) throws Exception;
   
-  public void update(Member member) throws Exception;
+  void update(Member member) throws Exception;
   
-  public void delete(int no) throws Exception;
+  void delete(int no) throws Exception;
 }
