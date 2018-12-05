@@ -88,3 +88,8 @@
 
 - 객체 생성과 소멸을 Spring IoC Container 에게 맡겨라!
 - <https://github.com/eomcs/eomcs-java-project> 에서 v5.9 과제 해결
+
+## 50 - Spring IoC 컨테이너와 MyBatis 연동하기
+
+- MyBatis가 하던 DataBase와 트랜잭션 관리 업무를 Spring IoC 컨테이너에게 넘겨라.
+- <https://github.com/eomcs/eomcs-java-project> 에서 v6.0 과제 해결
