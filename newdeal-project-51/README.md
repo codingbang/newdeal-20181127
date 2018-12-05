@@ -20,7 +20,7 @@
     - DataSource 객체를 생성하는 메서드 추가
     - SqlSessionFactory 객체를 생성하는 메서드 변경
         - MyBatis-Spring 연동 라이브러리에서 제공하는 도우미 클래스를 사용하여 SqlSessionFactory 객체를 만든다.
-    - Transaction
+    - Transaction 객체를 생성하는 메서드 추가
 
 
 ### Spring IoC 컨테이너 중비
