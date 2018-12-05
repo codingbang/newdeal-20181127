@@ -4,7 +4,7 @@ import java.util.Scanner;
 import org.springframework.stereotype.Component;
 import com.eomcs.lms.dao.MemberDao;
 
-@Component
+@Component("/member/delete")
 public class MemberDeleteCommand implements Command {
   
   Scanner keyboard;

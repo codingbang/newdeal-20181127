@@ -4,7 +4,7 @@ import java.util.Scanner;
 import org.springframework.stereotype.Component;
 import com.eomcs.lms.dao.LessonDao;
 
-@Component
+@Component("/lesson/delete")
 public class LessonDeleteCommand implements Command {
 
   Scanner keyboard;

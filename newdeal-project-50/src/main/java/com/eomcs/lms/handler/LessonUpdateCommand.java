@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import com.eomcs.lms.dao.LessonDao;
 import com.eomcs.lms.domain.Lesson;
 
-@Component
+@Component("/lesson/update")
 public class LessonUpdateCommand implements Command {
   
   Scanner keyboard;

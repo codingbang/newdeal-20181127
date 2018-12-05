@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import com.eomcs.lms.dao.MemberDao;
 import com.eomcs.lms.domain.Member;
 
-@Component
+@Component("/member/list")
 public class MemberListCommand implements Command {
   
   Scanner keyboard;

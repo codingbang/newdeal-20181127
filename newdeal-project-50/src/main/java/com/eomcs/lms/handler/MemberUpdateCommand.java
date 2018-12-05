@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import com.eomcs.lms.dao.MemberDao;
 import com.eomcs.lms.domain.Member;
 
-@Component
+@Component("/member/update")
 public class MemberUpdateCommand implements Command {
   
   Scanner keyboard;
