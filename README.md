@@ -83,3 +83,8 @@
 - 자바 소스에서 SQL 코드를 분리하라!
 - JDBC 코드를 캡슐화한 MyBatis로 대체하라!
 - <https://github.com/eomcs/eomcs-java-project> 에서 v5.2 과제 해결
+
+## 50 - Spring IoC Container 도입
+
+- 객체 생성과 소멸을 Spring IoC Container 에게 맡겨라!
+- <https://github.com/eomcs/eomcs-java-project> 에서 v5.9 과제 해결
