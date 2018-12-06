@@ -24,7 +24,7 @@ public class AuthFilter implements Filter{
     String servletPath = httpReq.getServletPath();
     if (!servletPath.startsWith("/auth") && !servletPath.endsWith(".html") && 
         !servletPath.endsWith(".css") && !servletPath.endsWith(".js") && 
-        !servletPath.endsWith(".png") && !servletPath.endsWith(".jpeg")) {
+        !servletPath.endsWith(".png") && !servletPath.endsWith(".jpeg") && !servletPath.startsWith("/member")) {
       HttpSession session = httpReq.getSession();
       Member loginUser = (Member) session.getAttribute("loginUser");
       if (loginUser == null) {

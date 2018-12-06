@@ -24,7 +24,9 @@
 
 <tr>
   <th></th>
-  <td><button>로그인</button></td>
+  <td><button>로그인</button>
+  <button type="button" onclick="location.href='/member/add'">회원가입</button>
+  </td>
 </tr>
 
 </table>
