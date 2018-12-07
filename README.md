@@ -98,3 +98,12 @@
 
 - 이클립스의 톰캣 실행 환경에서 테스트 할 수 있도록 프로젝트의 유형을 변경하라.
 - <https://github.com/eomcs/eomcs-java-project> 에서 v6.0 과제 해결
+
+## 53 - Front Controller 도입
+
+- 프론트 컨트롤러를 도입하라
+- 기존의 서블릿을 POJO 클래스로 바꾸고 Spring IoC 컨테이너가 관리하게 하라.
+
+## 54- Spring WebMVC 프레임워크를 도입
+
+- 기존에 작성한 프론트 컨트롤러를 Spring MVC

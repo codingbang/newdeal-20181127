@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eomcs.lms.dao.MemberDao">
+
+<resultMap type="member" id="memberMap">
+  <id column="mno" property="no"/>
+  <result column="name" property="name"/>
+  <result column="email" property="email"/>
+  <result column="pwd" property="password"/>
+  <result column="photo" property="photo"/>
+  <result column="tel" property="tel"/>
+  <result column="cdt" property="registeredDate"/>
+</resultMap>
+
+  
+  <select id="findByEmailPassword" parameterType="map" resultMap="memberMap">
+    select 
+      mno, 
+      name, 
+      email, 
+      photo 
+    from member 
+    where email=#{email} and pwd=#{password}
+  </select>
+  
+  <select id="findAll" resultMap="memberMap">
+    select 
+      mno, 
+      name, 
+      email, 
+      tel, 
+      cdt 
+    from member
+  </select>
+  
+  <select id="findByNo" parameterType="int" resultMap="memberMap">
+    select 
+      mno, 
+      name, 
+      email, 
+      pwd, 
+      photo, 
+      tel, 
+      cdt 
+    from member 
+    where mno=#{value}
+  </select>
+  
+  <insert id="insert" parameterType="member">
+    insert into member (
+      name, 
+      email, 
+      pwd, 
+      photo, 
+      tel
+    ) 
+    values ( 
+      #{name}, 
+      #{email}, 
+      #{password}, 
+      #{photo}, 
+      #{tel}
+    )
+  </insert>
+  
+  <update id="update" parameterType="member">
+    update member set 
+      name=#{name}, 
+      email=#{email}, 
+      photo=#{photo}, 
+      tel=#{tel} 
+    where mno=#{no}
+  </update>
+  
+  <delete id="delete" parameterType="int">
+    delete from member 
+    where mno=#{value}
+  </delete>
+
+  
+</mapper>
