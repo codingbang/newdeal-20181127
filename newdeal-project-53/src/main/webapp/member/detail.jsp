@@ -5,43 +5,39 @@
 <html>
 <head>
 <meta charset='UTF-8'>
-<title>게시물</title>
+<title>회원</title>
 </head>
 <body>
 
 <jsp:include page="/header.jsp" />
-<h1>게시글 상세정보</h1>
-<form action="update" method="post">
+<h1>회원 상세정보</h1>
+<form action="update" method="get">
 <table border='1'>
 <tr>
   <th>번호</th>
-  <td><input type="text" name="no" readonly value="${board.no }"></td>
+  <td><input type="text" name="no" readonly value="${member.no }"></td>
 </tr>
 
 <tr>
-  <th>내용</th>
-  <td><textarea name="contents" rows="5" cols="50">${board.contents }</textarea></td>
+  <th>이름</th>
+  <td><input type="text" readonly value="${member.name }"></td>
 </tr>
 
 <tr>
-  <th>작성일</th>
-  <td>${board.createdDate }</td>
+  <th>사진</th>
+  <td><input type="text" readonly value="${member.photo }"></td>
 </tr>
 
 <tr>
-  <th>조회수</th>
-  <td>${board.viewCount }</td>
+  <th>전화</th>
+  <td><input type="text" readonly value="${member.tel }"></td>
 </tr>
 
 <tr>
-  <th>작성자</th>
-  <td>${board.writer.name }</td>
+  <th>가입일</th>
+  <td><input type="text" readonly value="${member.registeredDate }"></td>
 </tr>
 
-<tr>
-  <th>수업</th>
-  <td>${board.lesson.title }</td>
-</tr>
 
 <tr>
   <th></th>
@@ -53,7 +49,7 @@
 
 <script>
 function remove() {
-  location.href = "delete?no=${board.no}"; 
+  location.href = "delete?no=${member.no}"; 
 }
 </script>
 

@@ -1,4 +1,4 @@
-package com.eomcs.lms.dao.impl;
+/*package com.eomcs.lms.dao.impl;
 
 import java.util.HashMap;
 import java.util.List;
@@ -83,3 +83,4 @@ public class MariaDBMemberDao implements MemberDao {
     }
   }
 }
+*/

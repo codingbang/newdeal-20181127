@@ -1,4 +1,4 @@
-package com.eomcs.lms.dao.impl;
+/*package com.eomcs.lms.dao.impl;
 
 import java.sql.DriverManager;
 import java.util.List;
@@ -69,3 +69,4 @@ public class MariaDBBoardDao  implements BoardDao{
     }
   }
 }
+*/

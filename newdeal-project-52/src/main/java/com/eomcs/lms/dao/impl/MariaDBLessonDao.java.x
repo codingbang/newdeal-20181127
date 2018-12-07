@@ -1,4 +1,4 @@
-package com.eomcs.lms.dao.impl;
+/*package com.eomcs.lms.dao.impl;
 
 import java.util.List;
 import java.util.Map;
@@ -71,3 +71,4 @@ public class MariaDBLessonDao implements LessonDao {
 
   
 }
+*/
