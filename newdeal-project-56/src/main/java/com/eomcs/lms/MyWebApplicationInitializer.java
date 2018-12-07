@@ -2,10 +2,7 @@ package com.eomcs.lms;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRegistration;
 import org.springframework.web.WebApplicationInitializer;
-import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
-import org.springframework.web.servlet.DispatcherServlet;
 
 // WebApplicationInitializer 구현체는
 // 웹 애플리케이션이 시작될 때 실행된다.
@@ -13,6 +10,13 @@ public class MyWebApplicationInitializer implements WebApplicationInitializer {
 
   @Override
   public void onStartup(ServletContext servletContext) throws ServletException {
+    
+    /*
+     * /WEB-INF/web.xml에서 DispatcherServlet을 준비한다면
+     * 다음 코드는 주석으로 막아라
+     */
+    
+    /*
     // 이 메서드가 호출될 때 할 일
     // 1) 프론트 컨트롤러가 사용할 Spring IoC 컨테이너를 준비한다.
     AnnotationConfigWebApplicationContext iocContainer = new AnnotationConfigWebApplicationContext();
@@ -40,6 +44,7 @@ public class MyWebApplicationInitializer implements WebApplicationInitializer {
     
     // - 프론트 컨트롤로의 URL을 지정한다.
     registration.addMapping("/app/*");
+    */
   }
 
 }

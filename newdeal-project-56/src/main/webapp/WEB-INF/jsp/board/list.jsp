@@ -8,7 +8,7 @@
 <title>게시물</title>
 </head>
 <body>
-<jsp:include page="/header.jsp" />
+<jsp:include page="../header.jsp" />
 <h1>게시글</h1>
 <a href="form"><button>새 글</button></a>
 <table border='1'>

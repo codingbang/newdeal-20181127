@@ -1,4 +1,4 @@
-package com.eomcs.lms.handler;
+/*package com.eomcs.lms.handler;
 
 import java.util.Scanner;
 import org.springframework.stereotype.Component;
@@ -20,3 +20,4 @@ public class HelloCommand implements Command{
     System.out.println(name + "님 반갑습니다!");
   }
 }
+*/

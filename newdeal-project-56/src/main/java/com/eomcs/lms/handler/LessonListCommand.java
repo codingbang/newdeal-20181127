@@ -1,4 +1,4 @@
-package com.eomcs.lms.handler;
+/*package com.eomcs.lms.handler;
 
 import java.util.List;
 import java.util.Scanner;
@@ -33,3 +33,4 @@ public class LessonListCommand implements Command {
   }
 
 }
+*/

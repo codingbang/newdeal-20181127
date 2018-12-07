@@ -8,7 +8,7 @@
 <title>회원</title>
 </head>
 <body>
-<jsp:include page="/header.jsp" />
+<%-- <jsp:include page="/header.jsp" /> --%>
 <h1>회원 수정</h1>
 <form action="update" method="post">
 <input type="hidden" name="no" value="${member.no }">

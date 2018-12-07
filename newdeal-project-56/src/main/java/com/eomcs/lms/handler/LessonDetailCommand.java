@@ -1,4 +1,4 @@
-package com.eomcs.lms.handler;
+/*package com.eomcs.lms.handler;
 
 import java.util.Scanner;
 import org.springframework.stereotype.Component;
@@ -45,3 +45,4 @@ public class LessonDetailCommand implements Command {
   
 
 }
+*/

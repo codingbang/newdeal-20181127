@@ -1,6 +1,5 @@
 package com.eomcs.lms;
 
-import java.util.Scanner;
 import javax.sql.DataSource;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -9,16 +8,18 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
+@Configuration
+
 // Spring IoC 컨테이너에게 패키지 이름을 알려주면
 // 그 패키지를 뒤져서 @Component가 붙은 클래스에 대해
 // 인스턴스를 자동으로 생성해준다.
-
-@ComponentScan("com.eomcs.lms")
+// => XML 설정에 추가되어 있다면 다음은 제거한다.
+// @ComponentScan("com.eomcs.lms")
 
 // Spring IoC 컨테이너에게 프로퍼티 파일을 로딩할 것을 명령한다.
 @PropertySource("classpath:/com/eomcs/lms/conf/jdbc.properties")
@@ -87,12 +88,23 @@ public class AppConfig {
     return factoryBean.getObject();
   }
   
+  // Spring WebMVC에 기본으로 설정되어 있는 ViewResolver를
+  // InternalResourceViewResolver로 교체한다
+  // 페이지 컨트롤러가 리턴하는 url 앞뒤에
+  // 설정된 경로를 붙인다.
   
+  // -> XML에서 ViewResolver 객체를 준비했다면
+  //    다음 메서드는 제거한다.
   
+  /*
   @Bean
-  public Scanner keyboard() {
-    return new Scanner(System.in);
+  public ViewResolver viewResolver() {
+    InternalResourceViewResolver vs = new InternalResourceViewResolver();
+    vs.setPrefix("/WEB-INF/jsp/");
+    vs.setSuffix(".jsp");
+    vs.setViewClass(JstlView.class);
+    return vs;
   }
-  
+  */
 
 }

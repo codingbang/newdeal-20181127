@@ -1,4 +1,4 @@
-package com.eomcs.lms.handler;
+/*package com.eomcs.lms.handler;
 
 import java.sql.Date;
 import java.util.Scanner;
@@ -56,3 +56,4 @@ public class LessonAddCommand implements Command {
   }
 
 }
+*/

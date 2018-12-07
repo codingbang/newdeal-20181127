@@ -8,7 +8,7 @@
 <title>회원</title>
 </head>
 <body>
-<jsp:include page="/header.jsp" />
+<%-- <jsp:include page="/header.jsp" /> --%>
 <h1>회원</h1>
 <table border='1'>
 <tr>
